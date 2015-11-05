@@ -1,0 +1,25 @@
+{
+  "name": "polymer-cordova-keyword",
+  "version": "1.0.1",
+  "authors": [
+    "collaborne"
+  ],
+  "description": "Web component to control keyboard via Cordova plugin (Polymer 1.x)",
+  "main": "polymer-cordova-keyword.html",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "molecules",
+    "cordova",
+    "phonegap",
+    "keyboard"
+  ],
+  "license": "Apache 2",
+  "homepage": "http://www.apache.org/licenses/LICENSE-2.0",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

@@ -1,0 +1,53 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id='polymer-cordova-keyboard'>
+	<template>
+	</template>
+</dom-module>
+
+<script>
+
+(function() {
+
+	Polymer({
+		is: 'polymer-cordova-keyboard',
+		properties: {
+			hideKeyboardAccessoryBar: {
+				type: Boolean,
+				notify: false,
+				observer: '_changeHideKeyboardAccessoryBar'
+			}
+		},
+		
+		ready: function() {
+			// Avoid race condition if Polymer is initialized before Cordova
+			document.addEventListener("deviceready", function() {
+				_setHideKeyboardAccessoryBar(this.hideKeyboardAccessoryBar);
+			}.bind(this), false);
+		};
+		
+		// Public methods
+		show: function() {
+			this.hideKeyboardAccessoryBar = false;
+		},
+		hide: function() {
+			this.hideKeyboardAccessoryBar = true;
+		},
+		
+		// Private methods
+		_changeHideKeyboardAccessoryBar: function(newValue, oldValue) {
+			this._setHideKeyboardAccessoryBar(newValue);
+		},
+		_setHideKeyboardAccessoryBar: function(value) {
+			if (typeof cordova == 'undefined' || typeof cordova.plugins == 'undefined' || typeof cordova.plugins.Keyboard == 'undefined') {
+				// Ignore if cordova plugin is not available
+				return;
+			}
+
+			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(value);
+		}
+	});
+
+})();
+
+</script>

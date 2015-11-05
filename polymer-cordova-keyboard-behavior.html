@@ -1,0 +1,18 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<script>
+
+var Polymer = Polymer || {};
+Polymer.CordovaKeyboardBehavior = {
+	// Public methods
+	close: function(e) {
+		if (typeof cordova == 'undefined' || typeof cordova.plugins == 'undefined' || typeof cordova.plugins.Keyboard == 'undefined') {
+			// Ignore if cordova plugin is not available
+			return;
+		}
+		
+		cordova.plugins.Keyboard.close();
+	}
+};
+
+</script>
