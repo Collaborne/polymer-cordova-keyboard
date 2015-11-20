@@ -1,11 +1,11 @@
 {
-  "name": "polymer-cordova-keyword",
+  "name": "polymer-cordova-keyboard",
   "version": "1.0.3",
   "authors": [
     "collaborne"
   ],
   "description": "Web component to control keyboard via Cordova plugin (Polymer 1.x)",
-  "main": "polymer-cordova-keyword.html",
+  "main": "polymer-cordova-keyboard.html",
   "keywords": [
     "web-components",
     "polymer",
