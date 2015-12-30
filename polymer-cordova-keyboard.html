@@ -1,5 +1,14 @@
 <link rel="import" href="../polymer/polymer.html">
 
+<!--
+Web component to control keyboard via Cordova plugin.
+
+### Example
+```html
+<polymer-cordova-keyboard hide-keyboard-accessory-bar></polymer-cordova-keyboard>
+```
+
+-->
 <dom-module id='polymer-cordova-keyboard'>
 </dom-module>
 
@@ -10,6 +19,9 @@
 	Polymer({
 		is: 'polymer-cordova-keyboard',
 		properties: {
+			/**
+			 * Flag if the keyboard accessory bar should be shown
+			 */
 			hideKeyboardAccessoryBar: {
 				type: Boolean,
 				notify: false,
@@ -25,9 +37,16 @@
 		},
 		
 		// Public methods
+		/**
+		 * Shows the keyboard accessory bar
+		 */
 		show: function() {
 			this.hideKeyboardAccessoryBar = false;
 		},
+		
+		/**
+		 * Hides the keyboard accessory bar
+		 */
 		hide: function() {
 			this.hideKeyboardAccessoryBar = true;
 		},

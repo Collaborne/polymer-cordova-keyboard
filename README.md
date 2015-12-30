@@ -1,37 +1,16 @@
-polymer-cordova-keyboard [![Bower version](https://badge.fury.io/bo/polymer-cordova-keyboard.svg)](http://badge.fury.io/bo/polymer-cordova-keyboard)
+_[Demo and API Docs](http://collaborne.github.io/polymer-cordova-keyboard)_
+
+
+polymer-cordova-keyboard [![Bower version](https://badge.fury.io/bo/polymer-cordova-keyboard.svg)](http://badge.fury.io/bo/polymer-cordova-keyboard) [![Travis state](https://travis-ci.org/Collaborne/polymer-cordova-keyboard.svg?branch=master)](https://travis-ci.org/Collaborne/polymer-cordova-keyboard)
 =========
 
 Web component to control keyboard via Cordova plugin. The web component is built with [Polymer 1.x](https://www.polymer-project.org).
 
 You need to install the Cordova plugin [com.ionic.keyboard](https://github.com/driftyco/ionic-plugin-keyboard) to use this Polymer component.
 
-
-## Usage
+To use this element:
 
 `bower install polymer-cordova-keyboard`
-
-```html
-<polymer-cordova-keyboard hide-keyboard-accessory-bar></polymer-cordova-keyboard>
-```
-
-
-## Properties
-
-These properties are available for `polymer-cordova-keyboard`:
-
-Property                        | Type    | Description
-------------------------------- | ------- | ----------------------------
-**hide-keyboard-accessory-bar** | Boolean | Flag if the keyboard accessory bar should be shown
-
-
-## Methods
-
-These methods are available for `polymer-cordova-keyboard`:
-
-Method   | Description
--------- | ----------------------------
-**show** | Shows the keyboard accessory bar
-**hide** | Hides the keyboard accessory bar
 
 
 ## License
