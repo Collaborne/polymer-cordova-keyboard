@@ -20,9 +20,9 @@
 		ready: function() {
 			// Avoid race condition if Polymer is initialized before Cordova
 			document.addEventListener("deviceready", function() {
-				_setHideKeyboardAccessoryBar(this.hideKeyboardAccessoryBar);
+				this._setHideKeyboardAccessoryBar(this.hideKeyboardAccessoryBar);
 			}.bind(this), false);
-		};
+		},
 		
 		// Public methods
 		show: function() {
