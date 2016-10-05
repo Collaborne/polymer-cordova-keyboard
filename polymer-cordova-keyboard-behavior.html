@@ -9,14 +9,32 @@ var Polymer = Polymer || {};
  * @polymerBehavior Polymer.CordovaKeyboardBehavior
  */
 Polymer.CordovaKeyboardBehavior = {
-	// Public methods
-	closeKeyboard: function(e) {
-		if (typeof cordova == 'undefined' || typeof cordova.plugins == 'undefined' || typeof cordova.plugins.Keyboard == 'undefined') {
+	/**
+	 * Shows the keyboard
+	 */
+	showKeyboard: function(e) {
+		if (!this._hasKeyboardPlugin()) {
 			// Ignore if cordova plugin is not available
 			return;
 		}
-		
+
+		cordova.plugins.Keyboard.show();
+	},
+
+	/**
+	 * Closes the keyboard
+	 */
+	closeKeyboard: function(e) {
+		if (!this._hasKeyboardPlugin()) {
+			// Ignore if cordova plugin is not available
+			return;
+		}
+
 		cordova.plugins.Keyboard.close();
+	},
+
+	_hasKeyboardPlugin: function() {
+		return typeof cordova !== 'undefined' && typeof cordova.plugins !== 'undefined' && typeof cordova.plugins.Keyboard !== 'undefined';
 	}
 };
 
