@@ -3,7 +3,7 @@
   "authors": [
     "collaborne"
   ],
-  "description": "Web component to control keyboard via Cordova plugin (Polymer 1.x)",
+  "description": "Web component to control keyboard via Cordova plugin (Polymer)",
   "main": "polymer-cordova-keyboard.html",
   "keywords": [
     "web-components",
@@ -19,12 +19,10 @@
     "**/.*"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^2.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
-    "web-component-tester": "*",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "web-component-tester": "*"
   }
 }
