@@ -1,7 +1,4 @@
-_[Demo and API Docs](http://collaborne.github.io/polymer-cordova-keyboard)_
-
-
-polymer-cordova-keyboard [![Bower version](https://badge.fury.io/bo/polymer-cordova-keyboard.svg)](http://badge.fury.io/bo/polymer-cordova-keyboard) [![Travis state](https://travis-ci.org/Collaborne/polymer-cordova-keyboard.svg?branch=master)](https://travis-ci.org/Collaborne/polymer-cordova-keyboard)
+polymer-cordova-keyboard [![Bower version](https://badge.fury.io/bo/polymer-cordova-keyboard.svg)](http://badge.fury.io/bo/polymer-cordova-keyboard) [![Travis state](https://travis-ci.org/Collaborne/polymer-cordova-keyboard.svg?branch=master)](https://travis-ci.org/Collaborne/polymer-cordova-keyboard) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Collaborne/polymer-cordova-keyboard)
 =========
 
 Web component to control keyboard via Cordova plugin. The web component is built with [Polymer](https://www.polymer-project.org).
