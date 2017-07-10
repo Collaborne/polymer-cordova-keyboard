@@ -1,0 +1,45 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<script>
+var Polymer = Polymer || {};
+
+/**
+ * Allows interacting with the Cordova keyboard
+ *
+ * @polymerMixinClass Polymer.CordovaKeyboardBehavior
+ * @param {Polymer.Element} parent The polymer parent element.
+ * @return {Function} CordovaKeyboardMixin mixed class.
+ */
+Polymer.CordovaKeyboardMixin = parent => class UriUtilsMixin extends parent {
+	
+	/**
+	 * Shows the keyboard
+	 */
+	showKeyboard() {
+		if (!this._hasKeyboardPlugin()) {
+			// Ignore if cordova plugin is not available
+			return;
+		}
+
+		cordova.plugins.Keyboard.show();
+	}
+
+	/**
+	 * Closes the keyboard
+	 */
+	closeKeyboard() {
+		if (!this._hasKeyboardPlugin()) {
+			// Ignore if cordova plugin is not available
+			return;
+		}
+
+		cordova.plugins.Keyboard.close();
+	}
+
+	_hasKeyboardPlugin() {
+		return typeof cordova !== 'undefined' && typeof cordova.plugins !== 'undefined' && typeof cordova.plugins.Keyboard !== 'undefined';
+	}
+
+};
+
+</script>
