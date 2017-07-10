@@ -5,6 +5,10 @@ Web component to control keyboard via Cordova plugin. The web component is built
 
 You need to install the Cordova plugin [com.ionic.keyboard](https://github.com/driftyco/ionic-plugin-keyboard) to use this Polymer component.
 
+This element uses Polymer 2 native classes (ES6 syntax). If you require Polymer hybrid mode: use release 2.0.x of this element.
+
+## Usage
+
 To use this element:
 
 `bower install polymer-cordova-keyboard`

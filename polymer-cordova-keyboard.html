@@ -10,61 +10,69 @@ Web component to control keyboard via Cordova plugin.
 
 -->
 <dom-module id="polymer-cordova-keyboard">
-</dom-module>
 
-<script>
+	<script>
 
-(function() {
+		class PolymerCordovaKeyboard extends Polymer.Element {
 
-	Polymer({
-		is: 'polymer-cordova-keyboard',
-		properties: {
+			static get is() {
+				return 'polymer-cordova-keyboard';
+			}
+
+			static get properties() {
+				return {
+					/**
+					* True if the keyboard accessory bar should be shown
+					*/
+					hideKeyboardAccessoryBar: {
+						type: Boolean,
+						notify: false,
+						observer: '_changeHideKeyboardAccessoryBar',
+					},
+				};
+			}
+			
+			ready() {
+				super.ready();
+
+				// Avoid race condition if Polymer is initialized before Cordova
+				document.addEventListener(
+					"deviceready",
+					() => this._setHideKeyboardAccessoryBar(this.hideKeyboardAccessoryBar),
+					false);
+			}
+			
 			/**
-			 * True if the keyboard accessory bar should be shown
-			 */
-			hideKeyboardAccessoryBar: {
-				type: Boolean,
-				notify: false,
-				observer: '_changeHideKeyboardAccessoryBar'
+			* Shows the keyboard accessory bar
+			*/
+			show() {
+				this.hideKeyboardAccessoryBar = false;
 			}
-		},
-		
-		ready: function() {
-			// Avoid race condition if Polymer is initialized before Cordova
-			document.addEventListener("deviceready", function() {
-				this._setHideKeyboardAccessoryBar(this.hideKeyboardAccessoryBar);
-			}.bind(this), false);
-		},
-		
-		// Public methods
-		/**
-		 * Shows the keyboard accessory bar
-		 */
-		show: function() {
-			this.hideKeyboardAccessoryBar = false;
-		},
-		
-		/**
-		 * Hides the keyboard accessory bar
-		 */
-		hide: function() {
-			this.hideKeyboardAccessoryBar = true;
-		},
-		
-		// Private methods
-		_changeHideKeyboardAccessoryBar: function(newValue, oldValue) {
-			this._setHideKeyboardAccessoryBar(newValue);
-		},
-		_setHideKeyboardAccessoryBar: function(value) {
-			if (typeof cordova == 'undefined' || typeof cordova.plugins == 'undefined' || typeof cordova.plugins.Keyboard == 'undefined') {
-				// Ignore if cordova plugin is not available
-				return;
+			
+			/**
+			* Hides the keyboard accessory bar
+			*/
+			hide() {
+				this.hideKeyboardAccessoryBar = true;
+			}
+			
+			// Private methods
+			_changeHideKeyboardAccessoryBar(newValue, oldValue) {
+				this._setHideKeyboardAccessoryBar(newValue);
+			}
+			
+			_setHideKeyboardAccessoryBar(value) {
+				if (typeof cordova == 'undefined' || typeof cordova.plugins == 'undefined' || typeof cordova.plugins.Keyboard == 'undefined') {
+					// Ignore if cordova plugin is not available
+					return;
+				}
+
+				cordova.plugins.Keyboard.hideKeyboardAccessoryBar(value);
 			}
 
-			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(value);
 		}
-	});
+		customElements.define(PolymerCordovaKeyboard.is, PolymerCordovaKeyboard);
 
-})();
+	</script>
 
-</script>
+</dom-module>

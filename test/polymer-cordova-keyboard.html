@@ -21,16 +21,32 @@
 		</test-fixture>
 	
 		<script>
-			suite('<polymer-cordova-keyboard>', function() {
-				suite('basic behavior', function() {
+			suite('<polymer-cordova-keyboard>', () => {
+				suite('basic behavior', () => {
 					var element;
 	
-					setup(function() {
+					setup(() => {
 						element = fixture('TrivialElement');
 					});
 					
-					test('always pass (Travis requires at least one test)', function() {
-						
+					test('hide() hides the accessory bar', () => {
+						// Pre-condition
+						expect(element.hideKeyboardAccessoryBar).to.be.undefined;
+
+						element.hide();
+
+						expect(element.hideKeyboardAccessoryBar).to.be.true;
+					});
+					
+					test('show() shows the accessory bar', () => {
+						element.hide();
+
+						// Pre-condition
+						expect(element.hideKeyboardAccessoryBar).to.be.true;
+
+						element.show();
+
+						expect(element.hideKeyboardAccessoryBar).to.be.false;
 					});
 				});
 			});
