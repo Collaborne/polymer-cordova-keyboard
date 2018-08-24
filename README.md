@@ -1,4 +1,6 @@
-polymer-cordova-keyboard [![Bower version](https://badge.fury.io/bo/polymer-cordova-keyboard.svg)](http://badge.fury.io/bo/polymer-cordova-keyboard) [![Travis state](https://travis-ci.org/Collaborne/polymer-cordova-keyboard.svg?branch=master)](https://travis-ci.org/Collaborne/polymer-cordova-keyboard) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Collaborne/polymer-cordova-keyboard)
+polymer-cordova-keyboard [![Bower version](https://badge.fury.io/bo/polymer-cordova-keyboard.svg)](http://badge.fury.io/bo/polymer-cordova-keyboard) [![Travis state](https://travis-ci.org/Collaborne/polymer-cordova-keyboard.svg?branch=master)](https://travis-ci.org/Collaborne/polymer-cordova-keyboard) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Collaborne/polymer-cordova-keyboard)  
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/Collabornepolymer-cordova-keyboard)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/Collabornepolymer-cordova-keyboard.svg)](https://vaadin.com/directory/component/Collabornepolymer-cordova-keyboard)
 =========
 
 Web component to control keyboard via Cordova plugin. The web component is built with [Polymer](https://www.polymer-project.org).
